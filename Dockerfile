@@ -1,6 +1,5 @@
 FROM php:5.6-fpm-alpine
 
-
 RUN	set -x \ 
 	delgroup www-data \
 	&& deluser www-data \
@@ -93,7 +92,7 @@ RUN 	apk del imagemagick-dev libmcrypt-dev make gcc g++ \
 	db-dev \
 	gdbm-dev \
 	build-base \
-	autoconf \
+	autoconf 
 
-ENV workdir /var/www/html
-WORKDIR ${workdir}
+ENV DIRPATH /var/www/html
+WORKDIR $DIRPATH
