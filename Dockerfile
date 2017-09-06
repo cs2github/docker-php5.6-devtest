@@ -1,5 +1,6 @@
 FROM php:5.6-fpm-alpine
 
+
 RUN	set -x \ 
 	delgroup www-data \
 	&& deluser www-data \
@@ -8,6 +9,12 @@ RUN	set -x \
 
 RUN 	apk add --no-cache --update imagemagick-dev libmcrypt-dev libmcrypt make gcc g++ \ 
 	icu-dev libcurl curl-dev libxslt-dev openldap-dev \
+	libpng \
+	imagemagick \
+	c-client \
+	icu-libs \
+	libldap \
+	libxslt \
 	libxml2-dev \
 	openssl-dev \
 	bzip2-dev \
@@ -88,3 +95,5 @@ RUN 	apk del imagemagick-dev libmcrypt-dev make gcc g++ \
 	build-base \
 	autoconf \
 
+ENV workdir /var/www/html
+WORKDIR ${workdir}
