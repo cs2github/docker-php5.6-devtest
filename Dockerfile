@@ -14,6 +14,7 @@ RUN 	apk add --no-cache --update imagemagick-dev libmcrypt-dev libmcrypt make gc
 	icu-libs \
 	libldap \
 	libxslt \
+	krb5-libs \
 	libxml2-dev \
 	openssl-dev \
 	bzip2-dev \
@@ -94,5 +95,5 @@ RUN 	apk del imagemagick-dev libmcrypt-dev make gcc g++ \
 	build-base \
 	autoconf 
 
-ENV DIRPATH /var/www/html
-WORKDIR $DIRPATH
+ADD	php.ini /usr/local/etc/php/php.ini
+
